@@ -19,7 +19,7 @@ $("#fetch-btn").click(function() {
 
   $.ajax({
     dataType: "json",
-    url: `https://api.github.com/users/${githubId}/repos`,
+    url: `https://api.github.com/users/${githubId}/repos?sort=updated`,
 
     success: function(data) {
       updateResult(`${data.length} repos`);
