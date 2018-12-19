@@ -1,3 +1,13 @@
+function updateResult(result) {
+  $("#result-msg").text(result);
+}
+
+function populateTable(repoList) {
+  for (var i = 0; i < repoList.length; i++) {
+    $("#repo-table tbody").append("<tr><td>" + repoList[i].name + "</td></tr>");
+  }
+}
+
 $("#fetch-btn").click(function() {
   var githubId = $("#github-id").val();
   console.log(githubId);
@@ -7,17 +17,12 @@ $("#fetch-btn").click(function() {
     url: "https://api.github.com/users/" + githubId + "/repos",
 
     success: function(data) {
-      console.log("success");
-      $("#result-msg").text(data.length + " repos");
-      for (let i = 0; i < data.length; i++) {
-        $("#repo-table").append("<tr><td>" + data[i].name + "</td></tr>");
-      }
+      updateResult(data.length + " repos");
+      populateTable(data);
     },
 
     error: function(err) {
-      console.log("fail");
-      console.log(err.statusText);
-      $("#result-msg").text("Invalid id?");
+      updateResult("Invalid id?");
     }
   });
 });
