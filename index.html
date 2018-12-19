@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Github Repo Lister</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui container">
+      <div class="ui segment">
+        <h1 class="ui header">Repository Lister</h1>
+        <div class="ui grid">
+          <div class="ui six wide column">
+            <div class="ui form">
+              <div class="field">
+                <input id="github-id" type="text" placeholder="Github id...">
+              </div>
+              <button id="fetch-btn" class="ui primary button">Fetch</button>
+            </div>
+          </div>
+          <div class="ui ten wide column">
+            <table class="ui celled table" id="repo-table">
+              <thead>
+                <tr>
+                  <th>Repo Name</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/repo-lister.js" type="text/javascript"></script>
+  </body>
+</html>
