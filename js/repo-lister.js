@@ -3,6 +3,7 @@ function updateResult(result) {
 }
 
 function populateTable(repoList) {
+  $("#repo-table tbody").empty()
   for (var i = 0; i < repoList.length; i++) {
     $("#repo-table tbody").append("<tr><td>" + repoList[i].name + "</td></tr>");
   }
