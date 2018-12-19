@@ -8,7 +8,7 @@ function populateTable(repoList) {
     $("#repo-table tbody").append(`
       <tr> 
         <td>  ${repoList[i].name} </td>
-        <td>  ${repoList[i].url} </td>
+        <td>  <a href="${repoList[i].html_url}"> link </a> </td>
       </tr>`);
   }
 }
