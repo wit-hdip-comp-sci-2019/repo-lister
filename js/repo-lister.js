@@ -3,9 +3,13 @@ function updateResult(result) {
 }
 
 function populateTable(repoList) {
-  $("#repo-table tbody").empty()
-  for (var i = 0; i < repoList.length; i++) {
-    $("#repo-table tbody").append("<tr><td>" + repoList[i].name + "</td></tr>");
+  $("#repo-table tbody").empty();
+  for (let i = 0; i < repoList.length; i++) {
+    $("#repo-table tbody").append(`
+      <tr> 
+        <td>  ${repoList[i].name} </td>
+        <td>  ${repoList[i].url} </td>
+      </tr>`);
   }
 }
 
@@ -15,10 +19,10 @@ $("#fetch-btn").click(function() {
 
   $.ajax({
     dataType: "json",
-    url: "https://api.github.com/users/" + githubId + "/repos",
+    url: `https://api.github.com/users/${githubId}/repos`,
 
     success: function(data) {
-      updateResult(data.length + " repos");
+      updateResult(`${data.length} repos`);
       populateTable(data);
     },
 
