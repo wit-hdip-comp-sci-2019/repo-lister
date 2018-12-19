@@ -5,8 +5,12 @@ $("#fetch-btn").click(function() {
   $.ajax({
     dataType: "json",
     url: "https://api.github.com/users/" + githubId + "/repos",
+
     success: function(data) {
       console.log("success");
+      for (let i = 0; i < data.length; i++) {
+        $("#repo-table").append("<tr><td>" + data[i].name + "</td></tr>");
+      }
     },
 
     error: function(err) {
