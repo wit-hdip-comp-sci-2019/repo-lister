@@ -8,6 +8,7 @@ $("#fetch-btn").click(function() {
 
     success: function(data) {
       console.log("success");
+      $("#result-msg").text(data.length + " repos");
       for (let i = 0; i < data.length; i++) {
         $("#repo-table").append("<tr><td>" + data[i].name + "</td></tr>");
       }
@@ -16,6 +17,7 @@ $("#fetch-btn").click(function() {
     error: function(err) {
       console.log("fail");
       console.log(err.statusText);
+      $("#result-msg").text("Invalid id?");
     }
   });
 });
