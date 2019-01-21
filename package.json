@@ -1,0 +1,22 @@
+{
+  "name": "repo-lister",
+  "version": "1.0.0",
+  "description": "",
+  "main": "repo-list.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wit-hdip-comp-sci-2018/repo-lister.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wit-hdip-comp-sci-2018/repo-lister/issues"
+  },
+  "homepage": "https://github.com/wit-hdip-comp-sci-2018/repo-lister#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
